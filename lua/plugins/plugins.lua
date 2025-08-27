@@ -21,7 +21,7 @@ return {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
-      require("nvim-autopairs").setup {}
+      require("nvim-autopairs").setup({})
     end,
   },
 
@@ -63,10 +63,8 @@ return {
     -- "neovim/nvim-lspconfig", -- LazyVim handles this
   },
 
-
-
   -- GitHub Copilot
-  -- { "github/copilot.vim" },
+  { "github/copilot.vim" },
 
   {
     "CopilotC-Nvim/CopilotChat.nvim",
@@ -75,6 +73,12 @@ return {
       "nvim-lua/plenary.nvim",
     },
     build = "make tiktoken",
+    keys = {
+      { "<leader>ch", "<cmd>CopilotChat<CR>", desc = "Copilot Chat" },
+      { "<leader>ce", "<cmd>CopilotChatExplain<CR>", desc = "Copilot Explain" },
+      { "<leader>cf", "<cmd>CopilotChatFix<CR>", desc = "Copilot Fix" },
+      { "<leader>cv", ":CopilotChatVisual<CR>", mode = "v", desc = "Copilot Chat (Visual)" },
+    },
     config = function()
       require("CopilotChat").setup({
         window = {
@@ -112,7 +116,7 @@ return {
   {
     "abecodes/tabout.nvim",
     config = function()
-      require("tabout").setup {
+      require("tabout").setup({
         tabkey = "<Tab>",
         backwards_tabkey = "<S-Tab>",
         act_as_tab = true,
@@ -122,26 +126,25 @@ return {
         enable_backwards = true,
         completion = true,
         tabouts = {
-          {open = "'", close = "'"},
-          {open = "\"", close = "\""},
-          {open = "`", close = "`"},
-          {open = "(", close = ")"},
-          {open = "[", close = "]"},
-          {open = "{", close = "}"}
+          { open = "'", close = "'" },
+          { open = '"', close = '"' },
+          { open = "`", close = "`" },
+          { open = "(", close = ")" },
+          { open = "[", close = "]" },
+          { open = "{", close = "}" },
         },
         ignore_beginning = true,
-        exclude = {}
-      }
+        exclude = {},
+      })
     end,
-    dependencies = {"nvim-treesitter"}, -- Use dependencies instead of wants
-    after = {"nvim-cmp"}, -- Use after instead of after
+    dependencies = { "nvim-treesitter" }, -- Use dependencies instead of wants
+    after = { "nvim-cmp" }, -- Use after instead of after
   },
 
   -- this will enable LSP for neovim config
   "folke/neodev.nvim",
 
   -- for LSP autocompletion
-
 
   -- telescope - searching / navigation
   {
@@ -155,18 +158,21 @@ return {
       require("telescope").load_extension("live_grep_args")
 
       -- Mapeamento para usar grep_string
-      vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope live_grep<CR>", { noremap = true, silent = true })
     end,
   },
 
   {
-  "startup-nvim/startup.nvim",
-  dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
-  config = function()
-    require "startup".setup()
-  end
+    "startup-nvim/startup.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+    },
+    config = function()
+      require("startup").setup()
+    end,
   },
-
 
   -- better highlighting
   {
@@ -177,7 +183,9 @@ return {
   {
     "kyazdani42/nvim-tree.lua",
     dependencies = "kyazdani42/nvim-web-devicons",
-    config = function() require("nvim-tree").setup {} end,
+    config = function()
+      require("nvim-tree").setup({})
+    end,
   },
 
   {
@@ -185,17 +193,15 @@ return {
     opt = true,
     cmd = { "DocsViewToggle" },
     config = function()
-      require("docs-view").setup {
+      require("docs-view").setup({
         position = "bottom",
         width = 60,
-      }
+      })
     end,
   },
 
   -- prettier tabs
   "romgrk/barbar.nvim",
-
-
 
   -- nice diagnostic pane on the bottom
   "folke/lsp-trouble.nvim",
@@ -214,9 +220,9 @@ return {
   {
     "windwp/nvim-ts-autotag",
     config = function()
-      require("nvim-ts-autotag").setup {
+      require("nvim-ts-autotag").setup({
         filetypes = { "html", "xml", "javascript", "typescript", "javascriptreact", "typescriptreact" },
-      }
+      })
     end,
   },
 
