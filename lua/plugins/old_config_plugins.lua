@@ -154,11 +154,18 @@ return {
       -- Carregar a extensão de live_grep_args
       require("telescope").load_extension("live_grep_args")
 
-      -- Mapeamento para usar find_files para mostrar todos os arquivos (não só do git)
-      vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files<CR>', { noremap = true, silent = true })
+      -- Mapeamento para usar grep_string
+      vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope live_grep<CR>', { noremap = true, silent = true })
     end,
   },
 
+  {
+  "startup-nvim/startup.nvim",
+  dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
+  config = function()
+    require "startup".setup()
+  end
+  },
 
 
   -- better highlighting
