@@ -3,3 +3,21 @@
 -- Add any additional options here
 
 vim.g.python3_host_prog = vim.fn.expand("~/.venvs/nvim/bin/python")
+vim.opt.termguicolors = true
+
+-- Use system clipboard
+vim.opt.clipboard = "unnamedplus"
+
+-- Force xsel
+vim.g.clipboard = {
+  name = "xsel",
+  copy = {
+    ["+"] = "xsel --clipboard --input",
+    ["*"] = "xsel --primary --input",
+  },
+  paste = {
+    ["+"] = "xsel --clipboard --output",
+    ["*"] = "xsel --primary --output",
+  },
+  cache_enabled = 1,
+}

@@ -58,7 +58,7 @@ return {
 
   -- lsp config
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     -- "williamboman/mason-lspconfig.nvim", -- LazyVim handles this
     -- "neovim/nvim-lspconfig", -- LazyVim handles this
   },
