@@ -6,7 +6,16 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false, -- Load always
+    enabled = false, -- Load always
+  },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      flavour = "mocha",
+    },
   },
 
   -- git integration

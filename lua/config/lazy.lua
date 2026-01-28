@@ -32,6 +32,11 @@ require("lazy").setup({
   },
   -- install = { colorscheme = { "tokyonight", "habamax" } },
   install = { colorscheme = { "catppuccin-mocha" } },
+
+  -- força Catppuccin após Lazy ser carregado
+  vim.defer_fn(function()
+    pcall(vim.cmd, "colorscheme catppuccin-mocha")
+  end, 0),
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
