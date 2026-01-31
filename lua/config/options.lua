@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.g.python3_host_prog = vim.fn.expand("~/.venvs/nvim/bin/python")
+vim.g.lazyvim_colorscheme = "catppuccin"
 vim.opt.termguicolors = true
 
 -- Use system clipboard

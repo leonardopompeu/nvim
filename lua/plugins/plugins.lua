@@ -6,7 +6,7 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    enabled = false, -- Load always
+    enabled = true, -- Load always
   },
 
   {
@@ -83,10 +83,10 @@ return {
     },
     build = "make tiktoken",
     keys = {
-      { "<leader>ch", "<cmd>CopilotChat<CR>", desc = "Copilot Chat" },
+      { "<leader>ch", "<cmd>CopilotChat<CR>",        desc = "Copilot Chat" },
       { "<leader>ce", "<cmd>CopilotChatExplain<CR>", desc = "Copilot Explain" },
-      { "<leader>cf", "<cmd>CopilotChatFix<CR>", desc = "Copilot Fix" },
-      { "<leader>cv", ":CopilotChatVisual<CR>", mode = "v", desc = "Copilot Chat (Visual)" },
+      { "<leader>cf", "<cmd>CopilotChatFix<CR>",     desc = "Copilot Fix" },
+      { "<leader>cv", ":CopilotChatVisual<CR>",      mode = "v",              desc = "Copilot Chat (Visual)" },
     },
     config = function()
       require("CopilotChat").setup({
@@ -147,7 +147,7 @@ return {
       })
     end,
     dependencies = { "nvim-treesitter" }, -- Use dependencies instead of wants
-    after = { "nvim-cmp" }, -- Use after instead of after
+    after = { "nvim-cmp" },               -- Use after instead of after
   },
 
   -- this will enable LSP for neovim config
