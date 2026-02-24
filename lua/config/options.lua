@@ -9,6 +9,13 @@ vim.opt.termguicolors = true
 -- Use system clipboard
 vim.opt.clipboard = "unnamedplus"
 
+vim.api.nvim_set_keymap(
+  "i",
+  "<Tab>",
+  'copilot#Accept("<Tab>")',
+  { expr = true, silent = true, noremap = true, replace_keycodes = false }
+)
+
 -- Force xsel
 vim.g.clipboard = {
   name = "xsel",

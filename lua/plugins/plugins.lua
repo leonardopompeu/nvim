@@ -72,6 +72,18 @@ return {
     -- "neovim/nvim-lspconfig", -- LazyVim handles this
   },
 
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+    init = function()
+      vim.g.VM_maps = {
+        ["Find Under"] = "<C-d>",
+        ["Add Cursor Down"] = "<C-Down>",
+        ["Add Cursor Up"] = "<C-Up>",
+      }
+    end,
+  },
+
   -- GitHub Copilot
   { "github/copilot.vim" },
 
