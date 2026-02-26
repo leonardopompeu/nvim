@@ -138,8 +138,8 @@ return {
     "abecodes/tabout.nvim",
     config = function()
       require("tabout").setup({
-        tabkey = "<Tab>",
-        backwards_tabkey = "<S-Tab>",
+        tabkey = "<C-l>",
+        backwards_tabkey = "<C-h>",
         act_as_tab = true,
         act_as_shift_tab = false,
         default_tab = "<C-t>",
@@ -159,7 +159,7 @@ return {
       })
     end,
     dependencies = { "nvim-treesitter" }, -- Use dependencies instead of wants
-    after = { "nvim-cmp" }, -- Use after instead of after
+    -- after = { "nvim-cmp" }, -- Use after instead of after
   },
 
   -- this will enable LSP for neovim config
