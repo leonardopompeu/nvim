@@ -1,14 +1,13 @@
 return {
   {
-    "leonardopompeu/neovim-kuromi-theme",
+    "leonardopompeu/neovim-mourning-bloom",
     lazy = false,
     priority = 1000,
     config = function()
-      require("kuromi").setup({
-        flavour = "neon",
+      require("mourning_bloom").setup({
         transparent = false,
       })
-      vim.cmd.colorscheme("kuromi")
+      vim.cmd.colorscheme("mourning-bloom")
     end,
   },
 }
